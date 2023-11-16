@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const DataSource = ({ getData = async () => {}, paramKey, children }) => {
+const DataSource = ({ getData = () => {}, paramKey, children }) => {
     const [resource, setResource] = useState(null);
 
     useEffect(() => {

@@ -12,15 +12,21 @@ import { authors } from './data/authors';
 import { books } from './data/books';
 import DataSource from './components/loaders/DataSource';
 import axios from 'axios';
-import { UserInfo } from './components/user-info';
-import ResourceLoader from './components/loaders/ResourceLoader';
-import { BookInfo } from './components/book-info';
 import DataSourceRenderPattern from './components/loaders/DataSourceRenderPattern';
+import { UserInfo } from './components/user-info';
+import { BookInfo } from './components/book-info';
+import ResourceLoader from './components/loaders/ResourceLoader';
 
 const getData = async (url) => {
     const response = await axios.get(url);
     return response;
 };
+
+const getDataFromLocalStorage = (key) => {
+    return { data: localStorage.getItem(key) };
+};
+
+const Message = ({ msg }) => <h1>{msg}</h1>;
 
 function App() {
     return (
@@ -45,6 +51,12 @@ function App() {
                         </ResourceLoader>
                         <DataSource getData={() => getData('/users/2')} paramKey={PARAM_KEY.USER}>
                             <UserInfo />
+                        </DataSource>
+                        <DataSource
+                            getData={() => getDataFromLocalStorage('test')}
+                            paramKey={PARAM_KEY.MSG}
+                        >
+                            <Message />
                         </DataSource>
                         <DataSourceRenderPattern
                             getData={() => getData('/users/2')}
