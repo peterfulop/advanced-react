@@ -1,5 +1,4 @@
 import './App.css';
-import CurrentUserLoader from './components/CurrentUserLoader';
 import Modal from './components/Modal';
 import SmallAuthorListItems from './components/authors/SmallAuthorListItems';
 import SmallBookListItems from './components/books/SmallBookListItems';
@@ -12,6 +11,8 @@ import { UserInfo } from './components/user-info';
 import { PARAM_KEY } from './constants';
 import { authors } from './data/authors';
 import { books } from './data/books';
+import ResourceLoader from './components/loaders/ResourceLoader';
+import { BookInfo } from './components/book-info';
 
 function App() {
     return (
@@ -31,9 +32,12 @@ function App() {
                 </LeftSideComp>
                 <RightSideComp title="Right">
                     <Modal>
-                        <CurrentUserLoader>
+                        <ResourceLoader resourceUrl={'/users/2'} paramKey={PARAM_KEY.USER}>
                             <UserInfo />
-                        </CurrentUserLoader>
+                        </ResourceLoader>
+                        <ResourceLoader resourceUrl={'/books/2'} paramKey={PARAM_KEY.BOOK}>
+                            <BookInfo />
+                        </ResourceLoader>
                     </Modal>
                 </RightSideComp>
             </SplitScreen>
