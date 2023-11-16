@@ -1,13 +1,11 @@
-import React from 'react';
 import { styled } from 'styled-components';
 
-const Container = styled('div')((props) => ({
+const Container = styled('div')(() => ({
     display: 'flex',
 }));
 
-const Panel = styled('div')((props) => ({
-    flex: props.flex,
-    color: props.color,
+const Panel = styled('div')(({ flex }) => ({
+    flex: flex,
 }));
 
 const SplitScreen = ({ children, leftWidth = 1, rightWidth = 1 }) => {
