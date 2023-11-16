@@ -1,7 +1,8 @@
 import './App.css';
+import ControlledForm from './components/forms/controlled-form';
 
 function App() {
-    return <>hello</>;
+    return <>{<ControlledForm />}</>;
 }
 
 export default App;
