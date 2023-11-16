@@ -5,17 +5,22 @@ const CurrentUserLoader = ({ children }) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        (async () => {
-            const res = await axios.get('/current-user');
-            setUser(res.data);
-        })();
+        const fetchCurrentUser = async () => {
+            const response = await axios.get('/current-user');
+            setUser(response.data);
+        };
+
+        fetchCurrentUser();
     }, []);
 
     return (
         <>
             {React.Children.map(children, (child) => {
                 if (React.isValidElement(child)) {
-                    return React.cloneElement(child, { user });
+                    return React.createElement(child.type, {
+                        ...child.props,
+                        user,
+                    });
                 }
                 return child;
             })}
