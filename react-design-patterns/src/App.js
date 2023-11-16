@@ -1,4 +1,5 @@
 import './App.css';
+import Modal from './components/Modal';
 import LargeAuthorListItems from './components/authors/LargeAuthorListItems';
 import SmallAuthorListItems from './components/authors/SmallAuthorListItems';
 import LargeBookListItems from './components/books/LargeBookListItems';
@@ -29,11 +30,13 @@ function App() {
                     />
                 </LeftSideComp>
                 <RightSideComp title="Right">
-                    <RegularList
-                        items={authors}
-                        parameterKey={PARAM_KEY.AUTHOR}
-                        ItemComponent={LargeAuthorListItems}
-                    />
+                    <Modal>
+                        <RegularList
+                            items={authors}
+                            parameterKey={PARAM_KEY.AUTHOR}
+                            ItemComponent={LargeAuthorListItems}
+                        />
+                    </Modal>
                     <RegularList
                         items={books}
                         parameterKey={PARAM_KEY.BOOK}
