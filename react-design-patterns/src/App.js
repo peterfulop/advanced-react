@@ -1,14 +1,14 @@
 import './App.css';
+import CurrentUserLoader from './components/CurrentUserLoader';
 import Modal from './components/Modal';
-import LargeAuthorListItems from './components/authors/LargeAuthorListItems';
 import SmallAuthorListItems from './components/authors/SmallAuthorListItems';
-import LargeBookListItems from './components/books/LargeBookListItems';
 import SmallBookListItems from './components/books/SmallBookListItems';
 import LeftSideComp from './components/layout/LeftSideComp';
 import RightSideComp from './components/layout/RightSideComp';
 import NumberedList from './components/lists/NumberedList';
 import RegularList from './components/lists/RegularList';
 import SplitScreen from './components/split-screen';
+import { UserInfo } from './components/user-info';
 import { PARAM_KEY } from './constants';
 import { authors } from './data/authors';
 import { books } from './data/books';
@@ -31,17 +31,10 @@ function App() {
                 </LeftSideComp>
                 <RightSideComp title="Right">
                     <Modal>
-                        <RegularList
-                            items={authors}
-                            parameterKey={PARAM_KEY.AUTHOR}
-                            ItemComponent={LargeAuthorListItems}
-                        />
+                        <CurrentUserLoader>
+                            <UserInfo />
+                        </CurrentUserLoader>
                     </Modal>
-                    <RegularList
-                        items={books}
-                        parameterKey={PARAM_KEY.BOOK}
-                        ItemComponent={LargeBookListItems}
-                    />
                 </RightSideComp>
             </SplitScreen>
         </>
