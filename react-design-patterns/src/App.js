@@ -8,6 +8,7 @@ import RightSideComp from './components/layout/RightSideComp';
 import NumberedList from './components/lists/NumberedList';
 import RegularList from './components/lists/RegularList';
 import SplitScreen from './components/split-screen';
+import { PARAM_KEY } from './constants';
 import { authors } from './data/authors';
 import { books } from './data/books';
 
@@ -18,24 +19,24 @@ function App() {
                 <LeftSideComp title="Left">
                     <RegularList
                         items={authors}
-                        sourceKey="author"
+                        parameterKey={PARAM_KEY.AUTHOR}
                         ItemComponent={SmallAuthorListItems}
                     />
                     <NumberedList
                         items={books}
-                        sourceKey="book"
+                        parameterKey={PARAM_KEY.BOOK}
                         ItemComponent={SmallBookListItems}
                     />
                 </LeftSideComp>
                 <RightSideComp title="Right">
                     <RegularList
                         items={authors}
-                        sourceKey="author"
+                        parameterKey={PARAM_KEY.AUTHOR}
                         ItemComponent={LargeAuthorListItems}
                     />
                     <RegularList
                         items={books}
-                        sourceKey="book"
+                        parameterKey={PARAM_KEY.BOOK}
                         ItemComponent={LargeBookListItems}
                     />
                 </RightSideComp>

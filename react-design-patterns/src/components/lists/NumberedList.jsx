@@ -7,13 +7,13 @@ const Wrapper = styled('div')(() => ({
     gap: 10,
 }));
 
-const NumberedList = ({ items, sourceKey, ItemComponent }) => {
+const NumberedList = ({ items, parameterKey, ItemComponent }) => {
     return (
         <>
             {items.map((item, index) => (
                 <Wrapper>
                     <h3>{index + 1}.</h3>
-                    <ItemComponent key={index} {...{ [sourceKey]: item }} />
+                    <ItemComponent key={index} {...{ [parameterKey]: item }} />
                 </Wrapper>
             ))}
         </>

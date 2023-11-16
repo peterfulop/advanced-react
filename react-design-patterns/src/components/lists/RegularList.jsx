@@ -1,8 +1,8 @@
-const RegularList = ({ items, sourceKey, ItemComponent }) => {
+const RegularList = ({ items, parameterKey, ItemComponent }) => {
     return (
         <>
             {items.map((item, index) => (
-                <ItemComponent key={index} {...{ [sourceKey]: item }} />
+                <ItemComponent key={index} {...{ [parameterKey]: item }} />
             ))}
         </>
     );
