@@ -17,10 +17,12 @@ const ControlledForm = () => {
                     [key]: { message: 'Name should be longer than 3 characters!' },
                 }));
             } else {
-                setErrors((prevState) => {
-                    const { name, ...rest } = prevState;
-                    return restOfErrors(rest);
-                });
+                if (errors?.name) {
+                    setErrors((prevState) => {
+                        const { name, ...rest } = prevState;
+                        return restOfErrors(rest);
+                    });
+                }
             }
         }
         if (key === 'age') {
@@ -30,10 +32,12 @@ const ControlledForm = () => {
                     [key]: { message: 'Age should be greater than 16!' },
                 }));
             } else {
-                setErrors((prevState) => {
-                    const { age, ...rest } = prevState;
-                    return restOfErrors(rest);
-                });
+                if (errors?.age) {
+                    setErrors((prevState) => {
+                        const { age, ...rest } = prevState;
+                        return restOfErrors(rest);
+                    });
+                }
             }
         }
 
