@@ -1,12 +1,14 @@
-import { includeUpdatableUser } from './include-updatable-user';
+import { PARAM_KEY } from '../../constants';
+import { includeUpdatableResource } from './include-updatable-resource';
 
-export const UserInfoForm = includeUpdatableUser(
+export const UserInfoForm = includeUpdatableResource(
     ({ user, onChangeUser, onPostUser, onResetUser }) => {
         const { name, age } = user || {};
         return user ? (
             <>
                 <label htmlFor="name">Name:</label>
                 <input
+                    id="name"
                     name="name"
                     type="text"
                     value={name}
@@ -14,6 +16,7 @@ export const UserInfoForm = includeUpdatableUser(
                 />
                 <label htmlFor="age">Age:</label>
                 <input
+                    id="age"
                     name="age"
                     type="number"
                     value={age}
@@ -26,5 +29,6 @@ export const UserInfoForm = includeUpdatableUser(
             <h3>loading...</h3>
         );
     },
-    3
+    '/users/3',
+    PARAM_KEY.USER
 );
