@@ -1,21 +1,21 @@
 import './App.css';
-import Modal from './components/modals/uncontrolled-modal';
-import SmallAuthorListItems from './components/authors/SmallAuthorListItems';
-import SmallBookListItems from './components/books/SmallBookListItems';
-import LeftSideComp from './components/layout/LeftSideComp';
-import RightSideComp from './components/layout/RightSideComp';
-import NumberedList from './components/lists/NumberedList';
-import RegularList from './components/lists/RegularList';
+import Modal from '../components/modals/uncontrolled-modal';
+import SmallAuthorListItems from '../components/authors/SmallAuthorListItems';
+import SmallBookListItems from '../components/books/SmallBookListItems';
+import LeftSideComp from '../components/layout/LeftSideComp';
+import RightSideComp from '../components/layout/RightSideComp';
+import NumberedList from '../components/lists/NumberedList';
+import RegularList from '../components/lists/RegularList';
 import SplitScreen from './components/split-screen';
-import { PARAM_KEY } from './constants';
-import { authors } from './data/authors';
-import { books } from './data/books';
-import DataSource from './components/loaders/DataSource';
+import { PARAM_KEY } from '../constants';
+import { authors } from '../data/authors';
+import { books } from '../data/books';
+import DataSource from '../components/loaders/DataSource';
 import axios from 'axios';
-import DataSourceRenderPattern from './components/loaders/DataSourceRenderPattern';
+import DataSourceRenderPattern from '../components/loaders/DataSourceRenderPattern';
 import { UserInfo } from './components/user-info';
 import { BookInfo } from './components/book-info';
-import ResourceLoader from './components/loaders/ResourceLoader';
+import ResourceLoader from '../components/loaders/ResourceLoader';
 
 const getData = async (url) => {
     const response = await axios.get(url);
