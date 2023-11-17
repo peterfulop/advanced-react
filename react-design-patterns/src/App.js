@@ -1,10 +1,10 @@
 import './App.css';
-import Flows from './pages/Flows';
+import HOC from './pages/HOC';
 
 function App() {
     return (
         <>
-            <Flows />
+            <HOC />
         </>
     );
 }
