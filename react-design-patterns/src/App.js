@@ -1,10 +1,10 @@
 import './App.css';
-import HOC from './pages/HOC';
+import { CustomHooks } from './pages/CustomHooks';
 
 function App() {
     return (
         <>
-            <HOC />
+            <CustomHooks />
         </>
     );
 }
