@@ -1,5 +1,5 @@
 import './App.css';
-import Modal from './components/Modal';
+import Modal from './components/modals/uncontrolled-modal';
 import SmallAuthorListItems from './components/authors/SmallAuthorListItems';
 import SmallBookListItems from './components/books/SmallBookListItems';
 import LeftSideComp from './components/layout/LeftSideComp';

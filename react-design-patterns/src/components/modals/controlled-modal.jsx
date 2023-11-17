@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { styled } from 'styled-components';
 
 const ModalBackground = styled('div')(() => ({
@@ -7,7 +5,7 @@ const ModalBackground = styled('div')(() => ({
     left: 0,
     top: 0,
     overflow: 'auto',
-    backgroundColor: '#000000070',
+    backgroundColor: '#0000008f',
     width: '100%',
     height: '100%',
 }));
@@ -21,16 +19,13 @@ const ModalContent = styled('div')(() => ({
     boxShadow: '1px 1px 5px black',
 }));
 
-const Modal = ({ children }) => {
-    const [show, setShow] = useState(false);
-
+const ControlledModal = ({ onClose, shouldDisplay, children }) => {
     return (
         <>
-            <button onClick={() => setShow(true)}>Show Modal</button>
-            {show && (
-                <ModalBackground onClick={() => setShow(false)}>
+            {shouldDisplay && (
+                <ModalBackground onClick={onClose}>
                     <ModalContent onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => setShow(false)}>Close</button>
+                        <button onClick={onClose}>Close</button>
                         {children}
                     </ModalContent>
                 </ModalBackground>
@@ -39,4 +34,4 @@ const Modal = ({ children }) => {
     );
 };
 
-export default Modal;
+export default ControlledModal;
