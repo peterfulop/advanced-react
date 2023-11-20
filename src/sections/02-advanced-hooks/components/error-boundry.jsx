@@ -18,3 +18,8 @@ export class ErrorBoudry extends React.Component {
         return this.props.children;
     }
 }
+
+export const Test = () => {
+    throw new Error('hello from error');
+    // return <h2>test</h2>;
+};
