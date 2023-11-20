@@ -1,7 +1,9 @@
 import { CallbackAsRef } from './components/use-callback-as-ref';
+import DeferredValue from './components/use-deferred-value';
 import UseId from './components/use-id';
 import ImperativeHandle from './components/use-imperative-handle';
 import LayoutEffect from './components/use-layout-effect';
+import Transition from './components/use-transition';
 
 const AdvancedHooks = () => {
     return (
@@ -23,6 +25,12 @@ const AdvancedHooks = () => {
             <br />
             <br />
             <ImperativeHandle />
+            <br />
+            <br />
+            <DeferredValue />
+            <br />
+            <br />
+            <Transition />
         </>
     );
 };
